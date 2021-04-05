@@ -1,0 +1,519 @@
+<sdf version='1.6'>
+  <model name='m220a_sim_d'>
+    <link name='dummy_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.664248 -9.7e-05 0.588837 0 -0 0</pose>
+        <mass>591.811</mass>
+        <inertia>
+          <ixx>17.4116</ixx>
+          <ixy>-0.0858456</ixy>
+          <ixz>1.88878</ixz>
+          <iyy>104.916</iyy>
+          <iyz>0.0131811</iyz>
+          <izz>109.491</izz>
+        </inertia>
+      </inertial>
+      <collision name='dummy_link_fixed_joint_lump__base_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://m220a_sim_d/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='dummy_link_fixed_joint_lump__base_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://m220a_sim_d/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <link name='LFwheel_Link'>
+      <pose frame=''>1.778 0 0.585 0 -0 3.14159</pose>
+      <inertial>
+        <pose frame=''>2.9e-05 -0.876347 -1.3e-05 0 -0 0</pose>
+        <mass>286.911</mass>
+        <inertia>
+          <ixx>27.9109</ixx>
+          <ixy>-0.000705582</ixy>
+          <ixz>-0.00034759</ixz>
+          <iyy>42.9626</iyy>
+          <iyz>0.00020699</iyz>
+          <izz>27.9112</izz>
+        </inertia>
+      </inertial>
+      <collision name='LFwheel_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://m220a_sim_d/meshes/LFwheel_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='LFwheel_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://m220a_sim_d/meshes/LFwheel_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='LFwheel_cont' type='revolute'>
+      <child>LFwheel_Link</child>
+      <parent>dummy_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='RFwheel_Link'>
+      <pose frame=''>1.778 0 0.585 0 -0 3.14159</pose>
+      <inertial>
+        <pose frame=''>-2.9e-05 0.876347 -1.3e-05 0 -0 0</pose>
+        <mass>286.911</mass>
+        <inertia>
+          <ixx>27.9109</ixx>
+          <ixy>-0.000705582</ixy>
+          <ixz>0.00034759</ixz>
+          <iyy>42.9626</iyy>
+          <iyz>-0.00020699</iyz>
+          <izz>27.9112</izz>
+        </inertia>
+      </inertial>
+      <collision name='RFwheel_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://m220a_sim_d/meshes/RFwheel_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='RFwheel_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://m220a_sim_d/meshes/RFwheel_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='RFwheel_cont' type='revolute'>
+      <child>RFwheel_Link</child>
+      <parent>dummy_link</parent>
+      <axis>
+        <xyz>-0 -1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='Raxle_link'>
+      <pose frame=''>-1.53427 0 0.541325 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.115028 -0.003688 0.027545 0 -0 0</pose>
+        <mass>6.96094</mass>
+        <inertia>
+          <ixx>0.0795169</ixx>
+          <ixy>-4.79171e-06</ixy>
+          <ixz>-0.000497046</ixz>
+          <iyy>0.0463614</iyy>
+          <iyz>0.000250764</iyz>
+          <izz>0.062948</izz>
+        </inertia>
+      </inertial>
+      <collision name='Raxle_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://m220a_sim_d/meshes/Raxle_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='Raxle_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://m220a_sim_d/meshes/Raxle_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='Raxle_rev' type='revolute'>
+      <child>Raxle_link</child>
+      <parent>dummy_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.17</lower>
+          <upper>0.17</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='LRwheelhub_Link'>
+      <pose frame=''>-1.53427 0.685 0.541325 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.010183 0.115169 0.006137 0 -0 0</pose>
+        <mass>7.38523</mass>
+        <inertia>
+          <ixx>0.0654835</ixx>
+          <ixy>0.00475907</ixy>
+          <ixz>-0.00677209</ixz>
+          <iyy>0.086461</iyy>
+          <iyz>0.00220466</iyz>
+          <izz>0.0601131</izz>
+        </inertia>
+      </inertial>
+      <collision name='LRwheelhub_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://m220a_sim_d/meshes/LRwheelhub_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='LRwheelhub_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://m220a_sim_d/meshes/LRwheelhub_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='LRwheelhub_rev' type='revolute'>
+      <child>LRwheelhub_Link</child>
+      <parent>Raxle_link</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-0.3</lower>
+          <upper>0.3</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='LRwheel_Link'>
+      <pose frame=''>-1.53427 0.865 0.539348 -0.017453 0 0</pose>
+      <inertial>
+        <pose frame=''>-0 -0.020536 -0 0 -0 0</pose>
+        <mass>112.329</mass>
+        <inertia>
+          <ixx>10.7003</ixx>
+          <ixy>2.84545e-14</ixy>
+          <ixz>2.81008e-15</ixz>
+          <iyy>16.3294</iyy>
+          <iyz>5.68989e-16</iyz>
+          <izz>10.7003</izz>
+        </inertia>
+      </inertial>
+      <collision name='LRwheel_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://m220a_sim_d/meshes/LRwheel_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='LRwheel_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://m220a_sim_d/meshes/LRwheel_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='LRwheel_cont' type='revolute'>
+      <child>LRwheel_Link</child>
+      <parent>LRwheelhub_Link</parent>
+      <axis>
+        <xyz>0 -0.999848 0.017452</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='RRwheelhub_Link'>
+      <pose frame=''>-1.53427 -0.685 0.541325 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.01012 -0.115283 0.006131 0 -0 0</pose>
+        <mass>7.39057</mass>
+        <inertia>
+          <ixx>0.0654815</ixx>
+          <ixy>-0.00479711</ixy>
+          <ixz>-0.00667782</ixz>
+          <iyy>0.0864591</iyy>
+          <iyz>-0.00220577</iyz>
+          <izz>0.0601126</izz>
+        </inertia>
+      </inertial>
+      <collision name='RRwheelhub_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://m220a_sim_d/meshes/RRwheelhub_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='RRwheelhub_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://m220a_sim_d/meshes/RRwheelhub_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='RRwheelhub_rev' type='revolute'>
+      <child>RRwheelhub_Link</child>
+      <parent>Raxle_link</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-0.3</lower>
+          <upper>0.3</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='RRwheel_Link'>
+      <pose frame=''>-1.53427 -0.877698 0.539126 0.017453 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0.033236 -0 0 -0 0</pose>
+        <mass>112.329</mass>
+        <inertia>
+          <ixx>10.7003</ixx>
+          <ixy>-3.80662e-14</ixy>
+          <ixz>-1.6994e-15</ixz>
+          <iyy>16.3294</iyy>
+          <iyz>-3.78864e-15</iyz>
+          <izz>10.7003</izz>
+        </inertia>
+      </inertial>
+      <collision name='RRwheel_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://m220a_sim_d/meshes/RRwheel_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='RRwheel_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://m220a_sim_d/meshes/RRwheel_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='RRwheel_cont' type='revolute'>
+      <child>RRwheel_Link</child>
+      <parent>RRwheelhub_Link</parent>
+      <axis>
+        <xyz>0 0.999848 0.017452</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+      <robotNamespace>/m220a_sim_d</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+    <static>0</static>
+  </model>
+</sdf>

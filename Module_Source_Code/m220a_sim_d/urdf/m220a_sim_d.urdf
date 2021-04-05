@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="m220a_sim_d">
+  <link
+    name="base_link">
+    <inertial>
+            <origin
+        xyz="0.664248340762401 -9.71108443197371E-05 0.58883710544899"
+        rpy="0 0 0" />
+              <mass
+        value="591.811388669448" />
+              <inertia
+        ixx="17.4115549145189"
+        ixy="-0.0858456092196217"
+        ixz="1.88877993504133"
+        iyy="104.916171577223"
+        iyz="0.0131810528442383"
+        izz="109.491249979225" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m220a_sim_d/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0901960784313725 0.380392156862745 0.670588235294118 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m220a_sim_d/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Raxle_link">
+    <inertial>
+      <origin
+        xyz="0.115027834396295 -0.00368791120621493 0.0275444861694117"
+        rpy="0 0 0" />
+      <mass
+        value="6.96093670977785" />
+      <inertia
+        ixx="0.0795168605718286"
+        ixy="-4.79170506361277E-06"
+        ixz="-0.000497046464018259"
+        iyy="0.0463614312865301"
+        iyz="0.000250763639659736"
+        izz="0.0629479932814762" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m220a_sim_d/meshes/Raxle_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.4 0.6 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m220a_sim_d/meshes/Raxle_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Raxle_rev"
+    type="revolute">
+    <origin
+      xyz="-1.5342700116 0 0.54132480000003"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Raxle_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0.17"
+      upper="-0.17"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RRwheelhub_Link">
+    <inertial>
+      <origin
+        xyz="0.0101197292226871 -0.115282963032153 0.00613134555331774"
+        rpy="0 0 0" />
+      <mass
+        value="7.39057069090286" />
+      <inertia
+        ixx="0.0654815354112381"
+        ixy="-0.00479710525420318"
+        ixz="-0.00667782117628212"
+        iyy="0.0864591374173895"
+        iyz="-0.00220576942946768"
+        izz="0.0601126248946336" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m220a_sim_d/meshes/RRwheelhub_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.4 0.6 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m220a_sim_d/meshes/RRwheelhub_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RRwheelhub_rev"
+    type="revolute">
+    <origin
+      xyz="0 -0.685 0"
+      rpy="0 0 0" />
+    <parent
+      link="Raxle_link" />
+    <child
+      link="RRwheelhub_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0.3"
+      upper="-0.3"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RRwheel_Link">
+    <inertial>
+      <origin
+        xyz="0 0.0332360777534125 -2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="112.328785456304" />
+      <inertia
+        ixx="10.7002611274863"
+        ixy="-3.80661704354953E-14"
+        ixz="-1.6994036063168E-15"
+        iyy="16.329414676448"
+        iyz="-3.78863607153336E-15"
+        izz="10.7002611274863" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m220a_sim_d/meshes/RRwheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.196078431372549 0.176470588235294 0.117647058823529 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m220a_sim_d/meshes/RRwheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RRwheel_cont"
+    type="continuous">
+    <origin
+      xyz="0 -0.192698065728486 -0.00219855720814253"
+      rpy="0.0174532925199481 0 0" />
+    <parent
+      link="RRwheelhub_Link" />
+    <child
+      link="RRwheel_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="LRwheelhub_Link">
+    <inertial>
+      <origin
+        xyz="0.0101831933496832 0.115168626863759 0.00613747696767633"
+        rpy="0 0 0" />
+      <mass
+        value="7.38522680074551" />
+      <inertia
+        ixx="0.0654835272657857"
+        ixy="0.00475907140727347"
+        ixz="-0.00677209460070224"
+        iyy="0.086461021829941"
+        iyz="0.00220465547996178"
+        izz="0.0601131347962688" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m220a_sim_d/meshes/LRwheelhub_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.4 0.6 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m220a_sim_d/meshes/LRwheelhub_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LRwheelhub_rev"
+    type="revolute">
+    <origin
+      xyz="0 0.685 0"
+      rpy="0 0 0" />
+    <parent
+      link="Raxle_link" />
+    <child
+      link="LRwheelhub_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0.3"
+      upper="-0.3"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LRwheel_Link">
+    <inertial>
+      <origin
+        xyz="-2.22044604925031E-16 -0.0205360777533298 -1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="112.328785456304" />
+      <inertia
+        ixx="10.700261127489"
+        ixy="2.84544554290303E-14"
+        ixz="2.81008058985987E-15"
+        iyy="16.3294146764527"
+        iyz="5.68989300120379E-16"
+        izz="10.700261127489" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m220a_sim_d/meshes/LRwheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0.0392156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m220a_sim_d/meshes/LRwheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LRwheel_cont"
+    type="continuous">
+    <origin
+      xyz="0 0.18 -0.00197691164638221"
+      rpy="-0.0174532925199407 0 0" />
+    <parent
+      link="LRwheelhub_Link" />
+    <child
+      link="LRwheel_Link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="RFwheel_Link">
+    <inertial>
+      <origin
+        xyz="-2.85929953931507E-05 0.876346708589147 -1.30473127682995E-05"
+        rpy="0 0 0" />
+      <mass
+        value="286.910658695307" />
+      <inertia
+        ixx="27.9109076636024"
+        ixy="-0.000705581579910743"
+        ixz="0.000347589706302624"
+        iyy="42.9626092450738"
+        iyz="-0.000206989823208419"
+        izz="27.9112259000473" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m220a_sim_d/meshes/RFwheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.196078431372549 0.176470588235294 0.117647058823529 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m220a_sim_d/meshes/RFwheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RFwheel_cont"
+    type="continuous">
+    <origin
+      xyz="1.778 0 0.584999999999999"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="RFwheel_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="LFwheel_Link">
+    <inertial>
+      <origin
+        xyz="2.85929955343711E-05 -0.876346708589249 -1.30473126640218E-05"
+        rpy="0 0 0" />
+      <mass
+        value="286.910658694691" />
+      <inertia
+        ixx="27.9109076635952"
+        ixy="-0.000705581583915759"
+        ixz="-0.000347589704174152"
+        iyy="42.9626092450694"
+        iyz="0.00020698982023692"
+        izz="27.9112259000389" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m220a_sim_d/meshes/LFwheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.196078431372549 0.176470588235294 0.117647058823529 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://m220a_sim_d/meshes/LFwheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LFwheel_cont"
+    type="continuous">
+    <origin
+      xyz="1.778 0 0.584999999999999"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="LFwheel_Link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+
+    <link name="dummy_link" >      
+    <origin
+        xyz="0 0 0"
+        rpy="0 0 0" /> 
+    </link>
+
+  <joint name="chassis_to_chassis_dummy" type="fixed">
+     <parent link="dummy_link"/>
+     <child link="base_link"/>
+  </joint>
+
+
+
+    <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+  <gazebo>
+	<transmission
+		type="transmission_interface/SimpleTransmission"
+		name="ackermann_steering"
+  >
+		<actuator name="ackermann_bar_link" />
+		<joint name="LRwheel_Link" />
+		<mechanicalReduction>1.0</mechanicalReduction>
+		<motorTorqueConstant>1</motorTorqueConstant>
+	</transmission>
+  </gazebo>
+
+    <gazebo>
+	<transmission
+		type="transmission_interface/SimpleTransmission"
+		name="ackermann_steering"
+  >
+		<actuator name="ackermann_bar_link_R" />
+		<joint name="RRwheel_Link" />
+		<mechanicalReduction>1.0</mechanicalReduction>
+		<motorTorqueConstant>1</motorTorqueConstant>
+	</transmission>
+  </gazebo>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+<!-- Rear Axle-->
+  <gazebo reference="Raxle_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+<!-- LR Wheel -->
+   <gazebo reference="LRwheel_Link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+<!-- LR Wheel Hub-->
+   <gazebo reference="LRwheelhub_Link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+<!-- RR Wheel -->
+   <gazebo reference="RRwheel_Link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+<!-- RR Wheel Hub-->
+   <gazebo reference="RRwheelhub_Link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  
+<!-- RF Wheel -->
+   <gazebo reference="RFwheel_Link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+
+
+<!-- LF Wheel -->
+   <gazebo reference="LFwheel_Link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+</robot>

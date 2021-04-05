@@ -1,0 +1,7 @@
+<launch>
+
+  <param name="my_string_param" type="string" value="Hello Lentin Joseph" />
+
+  <node name="param_node" pkg="mastering_ros_demo_pkg" type="demo_parameter_node" output="screen"/>
+
+</launch>

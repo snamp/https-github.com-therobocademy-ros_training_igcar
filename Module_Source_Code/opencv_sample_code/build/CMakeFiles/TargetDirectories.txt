@@ -1,0 +1,4 @@
+/home/robot/catkin_ws/src/opencv_sample_code/build/CMakeFiles/rebuild_cache.dir
+/home/robot/catkin_ws/src/opencv_sample_code/build/CMakeFiles/edit_cache.dir
+/home/robot/catkin_ws/src/opencv_sample_code/build/CMakeFiles/read_image.dir
+/home/robot/catkin_ws/src/opencv_sample_code/build/CMakeFiles/video_capture.dir
